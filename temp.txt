@@ -1,0 +1,3 @@
+NAME                ZONE        MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
+cls-f8ly-reducer-0  us-west1-a  n1-standard-1               10.138.0.19  34.168.132.57  RUNNING
+10.138.0.19

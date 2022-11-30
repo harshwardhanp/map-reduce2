@@ -1,0 +1,25 @@
+pip install command
+pip install google-cloud
+pip install google-cloud-vision
+pip install google.cloud.storage
+sudo apt-get update && sudo apt-get install google-cloud-cli
+gcloud auth application-default login --no-launch-browser
+
+
+
+
+pip3 install firebase-admin
+
+
+
+
+pip install google-cloud-storage
+pip install firebase
+pip install firebase_admin
+
+
+
+
+
+at the end of the program::
+gcloud auth application-default revoke
