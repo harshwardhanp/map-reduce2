@@ -1,6 +1,7 @@
-pip install google-cloud
-pip install google-cloud-vision
-pip3 install firebase-admin
-pip install google-cloud-storage
-pip install firebase
-pip install firebase_admin
+sudo curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+sudo python3 get-pip.py
+pip3 install google-cloud
+pip3 install google-cloud-vision
+pip3 install google-cloud-storage
+pip3 install firebase
+pip3 install firebase_admin
