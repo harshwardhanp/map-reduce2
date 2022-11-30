@@ -14,7 +14,7 @@ class Server:
     # Usage : takes file name and key which has to be searched in the file and
     # returns the latest key-value pair in the file.
     # if not found : returns ERROR
-    def find_key_in_file(self, filename: str, key: str) -> list[str]:
+    def find_key_in_file(self, filename, key):
         with open(filename, 'r') as target_file:
             list_of_lines = []
             for num, line in enumerate(target_file.readlines(), 1):
