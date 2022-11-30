@@ -17,7 +17,7 @@ useradd -m -d /home/pythonapp pythonapp
 virtualenv -p python3 /opt/app/gce/env
 /bin/bash -c "source /opt/app/gce/env/bin/activate"
 /opt/app/gce/env/bin/pip install -r /opt/app/gce/requirements.txt
-/opt/app/gce/env/bin/pip install -r /opt/mapreduce/map-reduce/env/requirements.txt
+/opt/app/gce/env/bin/pip install -r /opt/mapreduce/requirements.txt
 # Set ownership to newly created account
 # chown -R pythonapp:pythonapp /opt/app
 
@@ -27,3 +27,5 @@ cp /opt/app/gce/python-app.conf /etc/supervisor/conf.d/python-app.conf
 # Start service via supervisorctl
 supervisorctl reread
 supervisorctl update
+
+python3 /opt/mapreduce/mapper_server.py
