@@ -1,5 +1,5 @@
-pip3 install google-cloud
-pip3 install google-cloud-vision
-pip3 install google-cloud-storage
-pip3 install firebase
-pip3 install firebase_admin
+google-cloud
+google-cloud-vision
+google-cloud-storage
+firebase
+firebase_admin
