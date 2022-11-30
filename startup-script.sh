@@ -20,7 +20,7 @@ useradd -m -d /home/pythonapp pythonapp
 virtualenv -p python3 /opt/app/gce/env
 /bin/bash -c "source /opt/app/gce/env/bin/activate"
 /opt/app/gce/env/bin/pip install -r /opt/app/gce/requirements.txt
-# pip3 /opt/mapreduce/requirements.txt
+pip3 install -r /opt/mapreduce/requirements.txt
 # Set ownership to newly created account
 # chown -R pythonapp:pythonapp /opt/app
 
