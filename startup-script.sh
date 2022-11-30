@@ -28,4 +28,4 @@ cp /opt/app/gce/python-app.conf /etc/supervisor/conf.d/python-app.conf
 supervisorctl reread
 supervisorctl update
 
-python3 /opt/mapreduce/mapper_server.py
+#python3 /opt/mapreduce/mapper_server.py
