@@ -1,0 +1,6 @@
+pip install google-cloud
+pip install google-cloud-vision
+pip3 install firebase-admin
+pip install google-cloud-storage
+pip install firebase
+pip install firebase_admin
