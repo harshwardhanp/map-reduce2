@@ -1,5 +1,3 @@
-sudo curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-sudo python3 get-pip.py
 pip3 install google-cloud
 pip3 install google-cloud-vision
 pip3 install google-cloud-storage
