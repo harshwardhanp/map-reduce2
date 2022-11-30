@@ -3,6 +3,9 @@ apt-get update
 apt-get install -yq git supervisor python python-pip python3-distutils
 pip install --upgrade pip virtualenv
 
+sudo curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+sudo python3 get-pip.py
+
 # Fetch source code
 export HOME=/root
 git clone https://github.com/GoogleCloudPlatform/getting-started-python.git /opt/app
@@ -27,5 +30,3 @@ cp /opt/app/gce/python-app.conf /etc/supervisor/conf.d/python-app.conf
 # Start service via supervisorctl
 supervisorctl reread
 supervisorctl update
-
-#python3 /opt/mapreduce/mapper_server.py
