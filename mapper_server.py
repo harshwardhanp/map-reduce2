@@ -8,8 +8,11 @@ from firebase_admin import credentials, initialize_app, storage
 import os 
 from map import map_function
 
+username = sys.argv[1]
+certificate_file_path = "home/"+username+"/keystore.json"
+
 # Init firebase with your credentials
-cred = credentials.Certificate("keystore.json")
+cred = credentials.Certificate(certificate_file_path)
 initialize_app(cred, {'storageBucket': 'h-cluster-pool'})
 
 class Server:

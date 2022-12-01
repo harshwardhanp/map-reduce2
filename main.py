@@ -87,18 +87,18 @@ if __name__ == "__main__":
                 # get the cluster object
                 cluster_id = cmd_format[2]
                 cls_obj = cluster.get_cluster_obj(cluster_id, cluster_pool)
-
+                print("Got cluster object")
                 mapper = cmd_format[4]  #map_wc #map_ini
                 reducer = cmd_format[6] #red_wc #red_ini
                 if mapper not in ['map_wc', 'map_ini']:
                     raise Exception("Unknown Mapper Function. Please provide valid mapper name: 'map_wc' or 'map_ini' ")
-
+                print("Master has been set")
                 if reducer not in ['red_wc','red_ini']:
                     raise Exception("Unknown Reducer Function. Please provide valid reducer name: 'red_wc' or 'red_ini' ")
-
+                print("Reducer has been set")
                 if not (cls_obj.set_mapper_func(mapper) and cls_obj.set_reducer_func(reducer)):
                     raise RuntimeError("Runtime Error!!! Error occured while setting up mapper and reducer")
-                
+                print("Both has been set")
                 # cluster.update_cluster_object()
                 # cluster.update_cluster_pool(cluster_pool)
             

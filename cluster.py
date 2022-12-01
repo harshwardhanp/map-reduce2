@@ -111,7 +111,7 @@ class cluster:
     
     def create_network(self, cluster_id, machine_count):
         temp_file = open("temp.txt",'w')
-        subprocess.call(["bash","create_network.sh","default", str(machine_count)], stdout=temp_file)
+        subprocess.call(["bash","create_network.sh",cluster_id, str(machine_count)], stdout=temp_file)
         with open("temp.txt",'r') as file:
             output = file.read()
         print(output)
@@ -119,7 +119,7 @@ class cluster:
 
     def delete_network(self, cluster_id, machine_count):
         temp_file = open("temp.txt",'w')
-        subprocess.call(["bash","delete_network.sh","default"], stdout=temp_file)
+        subprocess.call(["bash","delete_network.sh",cluster_id], stdout=temp_file)
         with open("temp.txt",'r') as file:
             output = file.read()
         print(output)
@@ -131,7 +131,7 @@ class cluster:
         for c in range(count):
             temp_file = open("temp.txt",'w')
             machine_name = cluster_id + '-' + spec.lower() + '-' + str(c)
-            subprocess.call(["bash","create_vm.sh",machine_name], stdout=temp_file)
+            subprocess.call(["bash","create_vm.sh",machine_name, cluster_id], stdout=temp_file)
             with open("temp.txt",'r') as file:
                 output = file.read()
             vm_names.append(machine_name)
@@ -214,23 +214,25 @@ class cluster:
     def get_cluster_ids(cluster_pool):
         ids = []
         for cluster_obj in cluster_pool:
-            ids.append(cluster_obj._id)
+            ids.append(cluster_obj.__id)
         
         return ids
   
     def get_cluster_obj(cluster_id, cluster_pool):
         for cluster_obj in cluster_pool:
-            if cluster_id == cluster_obj._id:
+            if cluster_id == cluster_obj.__id:
                 return cluster_obj
     
     def set_mapper_func(self, mapper):
         self.__mapper_func = mapper
+        return True
 
     def get_mapper_func(self):
         return self.__mapper_func
 
     def set_reducer_func(self, reducer):
         self.__reducer_func = reducer
+        return True
 
     def get_reducer_func(self):
         return self.__reducer_func

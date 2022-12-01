@@ -21,8 +21,9 @@ virtualenv -p python3 /opt/app/gce/env
 /bin/bash -c "source /opt/app/gce/env/bin/activate"
 /opt/app/gce/env/bin/pip install -r /opt/app/gce/requirements.txt
 pip3 install -r /home/mapreduce/requirements.txt
+
 # Set ownership to newly created account
-# chown -R pythonapp:pythonapp /opt/app
+chown -R pythonapp:pythonapp /opt/app
 
 # Put supervisor configuration in proper place
 cp /opt/app/gce/python-app.conf /etc/supervisor/conf.d/python-app.conf
