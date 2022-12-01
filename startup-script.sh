@@ -9,7 +9,7 @@ sudo python3 get-pip.py
 # Fetch source code
 export HOME=/root
 git clone https://github.com/GoogleCloudPlatform/getting-started-python.git /opt/app
-git clone https://github.com/harshwardhanp/map-reduce.git /opt/mapreduce
+git clone https://github.com/harshwardhanp/map-reduce.git /home/mapreduce/
 # Install Cloud Ops Agent
 sudo bash /opt/app/gce/add-google-cloud-ops-agent-repo.sh --also-install
 
@@ -20,7 +20,7 @@ useradd -m -d /home/pythonapp pythonapp
 virtualenv -p python3 /opt/app/gce/env
 /bin/bash -c "source /opt/app/gce/env/bin/activate"
 /opt/app/gce/env/bin/pip install -r /opt/app/gce/requirements.txt
-pip3 install -r /opt/mapreduce/requirements.txt
+pip3 install -r /home/mapreduce/requirements.txt
 # Set ownership to newly created account
 # chown -R pythonapp:pythonapp /opt/app
 
